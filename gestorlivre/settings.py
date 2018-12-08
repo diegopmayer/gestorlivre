@@ -79,14 +79,15 @@ WSGI_APPLICATION = 'gestorlivre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASE:{
-    'defaut':{
-        'ENGINE':'django.db.backend.postgresql_psycopg2',
-        'NAME':'mydatabase',
-        'USER':'admin',
-        'HOST':'localhost',
-        'PORT':'5432',
-    }
+DATABASES = {
+	'default': {
+    	'ENGINE': 'django.db.backends.postgresql',
+    	'NAME': os.environ.get('DB_NAME', 'django'),
+    	'USER': os.environ.get('DB_USER', 'postgres'),
+    	'PASSWORD': os.environ.get('DB_PASS', '@Vnt794613'),
+    	'HOST': 'localhost',
+    	'PORT': '5432',
+	}
 }
 
 

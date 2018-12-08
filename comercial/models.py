@@ -12,7 +12,7 @@ class Produto(models.Model):
     Imagem_do_produto = models.ImageField(upload_to='upload/', null=True, blank=True)
     Link_para_produto_no_site = models.URLField(null=True, blank=True)
     Obs_do_produto = models.TextField(null=True, blank=True)
-    Data_cadastro_do_produto = models.DateField(null=True, blank=True)
+    Data_de_cadastro_do_produto = models.DateField(null=True, blank=True)
 
 class Pedido(models.Model):
     Descricao_do_pedido = models.CharField(max_length=100, null=True, blank=True)
@@ -27,6 +27,6 @@ class Pedido(models.Model):
         ("PS", "Presencial"),
         ("PL", "Produto na loja")
     )
-    Metodo_de_entrega = models.CharField(max_leght=100, choices=METODODEENTREGA, null=True, blank=True)
+    Metodo_de_entrega = models.CharField(max_length=100, choices=METODODEENTREGA, null=True, blank=True)
     Data_prevista_para_entrega = models.DateField(null=True, blank=True)
     Data_de_cadastro_do_pedido = models.DateField(null=True, blank=True)
