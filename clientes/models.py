@@ -66,7 +66,7 @@ class Clientes(models.Model):
         ("RO", "Rondônia"),
         ("SC", "Santa Catarina"),
         ("SP", "São Paulo"),
-        ("SE", "Sergipe"),
+        ("SE", "fornecedorSergipe"),
         ("TO", "Tocantins"),
     )
     Estado = models.CharField(max_length=60, choices=ESTADO)
