@@ -1,6 +1,6 @@
 from django.db import models
 from clientes.models import Categoria, Clientes
-#from fornecedores.models import Fornecedores
+from fornecedores.models import Fornecedor
 from django.conf import settings
 
 class Conta_bancaria(models.Model):
@@ -64,7 +64,7 @@ class Registro_financeiro(models.Model):
             null=True,
             blank=True)
     Fornecedor_do_registro = models.ForeignKey(
-            Fornecedores,
+            Fornecedor,
             on_delete=models.CASCADE,
             null=True,
             blank=True)
@@ -97,13 +97,13 @@ class Registro_financeiro(models.Model):
     Conta_de_saida = models.ForeignKey(
             Conta_bancaria,
             on_delete=models.CASCADE,
-            #related_name='Entrada',
+            related_name='Entrada',
             null=True,
             blank=True)
     Conta_de_entrada = models.ForeignKey(
             Conta_bancaria,
             on_delete=models.CASCADE,
-            #related_name='Entrada
+            related_name='Entrada',
             null=True,
             blank=True)
     Forma_do_registro = models.CharField(
