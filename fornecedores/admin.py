@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Fornecedor
 
-class FornecedorAdmin(admin.ModelAdmin)
+class FornecedorAdmin(admin.ModelAdmin):
    
     list_display = (
         'Usuario_responsavel',
@@ -37,8 +37,9 @@ class FornecedorAdmin(admin.ModelAdmin)
         'Telefone_2',
         'Celular_direto_do_proprietario',
         'Contrato_do_fornecedor',
-        'Ultima_reuniao_de-alinhamento',
+        'Ultima_reuniao_de_alinhamento',
         'Usuario_representante_na_ultima_reuniao',
         'Obs_do_fornecedor',
         'Data_de_cadastro_do_fornecedor')
 
+admin.site.register(Fornecedor, FornecedorAdmin)

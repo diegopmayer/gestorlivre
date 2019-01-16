@@ -1,7 +1,7 @@
 from django.db import models
 from estoque.models import Item
 from django.conf import settings
-from phonenumber_field.modelfields import PhoneNumber_field
+from phonenumber_field.modelfields import PhoneNumberField
 
 class Fornecedor(models.Model):
 
@@ -9,14 +9,14 @@ class Fornecedor(models.Model):
         settings.AUTH_USER_MODEL,
         related_name='Responsavel',
         on_delete=models.CASCADE)
-    Nome_do_Fornecedor = models.CharField(
+    Nome_do_fornecedor = models.CharField(
         max_length=100,
         null=True,
         blank=True)
     def __str__(self):
         return self.Nome_do_Fornecedor
     
-    Principal_item_fornecido = models.ForeignKey(
+    Principal_item_fornecedor = models.ForeignKey(
         Item,
         on_delete=models.CASCADE,
         null=True,
@@ -24,7 +24,7 @@ class Fornecedor(models.Model):
     
     Fornecedor_ativo = models.BooleanField()
 
-    Logo_do_Fornecedor = models.ImageField(
+    Logo_do_fornecedor = models.ImageField(
         upload_to='upload/',
         null=True,
         blank=True)
@@ -43,11 +43,11 @@ class Fornecedor(models.Model):
     Email_do_fornecedor = models.EmailField(
         null=True,
         blank=True)
-    Telefone_1 = PhoneNumber_field()
+    Telefone_1 = PhoneNumberField()
 
-    Telefone_2 = PhoneNumber_field()
+    Telefone_2 = PhoneNumberField()
 
-    Celular_direto_do_proprietario = PhoneNumber_field()
+    Celular_direto_do_proprietario = PhoneNumberField()
 
     Contrato_do_fornecedor = models.FileField(
         upload_to='upload/',

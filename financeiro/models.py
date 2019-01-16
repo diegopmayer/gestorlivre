@@ -1,5 +1,5 @@
 from django.db import models
-from clientes.models import Categoria, Cliente
+from clientes.models import Categoria, Clientes
 from fornecedores.models import Fornecedor
 from comercial.models import Produto
 from django.conf import settings
@@ -72,7 +72,7 @@ class Registro_financeiro(models.Model):
             blank=True)
 
     Cliente_do_registro = models.ForeignKey(
-            Cliente, on_delete=models.CASCADE, 
+            Clientes, on_delete=models.CASCADE, 
             null=True, 
             blank=True)
 

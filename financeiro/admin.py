@@ -1,5 +1,5 @@
 from django.contrib import admin
-from clientes.models import Categoria, Cliente
+from clientes.models import Categoria, Clientes
 from fornecedores.models import Fornecedor
 from comercial.models import Produto
 from .models import Categoria_registro
